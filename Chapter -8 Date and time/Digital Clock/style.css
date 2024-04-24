@@ -1,0 +1,17 @@
+/* body{
+  background-color: rgb(24, 78, 78);
+  font: 35px;
+  color: aliceblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hour,.minute,.second{
+height: 35px;
+width: 30px;
+margin: auto;
+position: relative;
+left: 100px;
+background-color: rgb(253, 129, 241);
+border: 1px;
+color: black;
+} */
