@@ -182,32 +182,101 @@
 //   console.log(res);
 // });
 
-function asyncFun1() {
+// function asyncFun1() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("sucess");
+//       resolve("Sucess");
+//     }, 5000);
+//   });
+// }
+
+// function asyncFun2() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("success");
+//       resolve("Success");
+//     }, 5000);
+//   });
+// }
+
+// console.log("fetching data1...");
+
+// let p1 = asyncFun1();
+// p1.then((res) => {
+//   console.log("fetching data2");
+//   let p2 = asyncFun2();
+//   p2.then((res) => {
+//   });
+// });
+
+// You can write the same code like this
+
+// asyncFun1().then((res) => {
+//   setTimeout(() => {
+//     console.log("fetching data2....");
+//     asyncFun2().then((res) => {});
+//   },3000);
+// });
+
+// function getData(dataId) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("data", dataId);
+//       resolve("Success....!");
+//     },5000);
+//   });
+// }
+
+// getData(1).then((res)=>{
+//   console.log(res);
+//   getData(2).then((res) => {
+//     console.log(res);
+//   })
+// });
+
+// Promises Chaining
+
+// getData(1).then((res) => {
+//   return getData(2);
+// }).then((res) => {
+// return getData(4);
+// }).then ((res)=>{
+//   console.log(res);
+// })
+
+// function hello() {
+//   return new Promise((resolve, reject) => {
+//   setTimeout(()=>{
+//     console.log("weather Data");
+//     resolve(200);
+//   },3000)
+//   });
+// }
+
+// async function getWeather(){
+// await hello();
+// await hello();
+
+// }
+
+// Async -await
+
+function getData(dataId) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("sucess");
-      resolve("Sucess");
-    }, 5000);
+      console.log("date", dataId);
+      resolve(200);
+    }, 2000);
   });
 }
 
-function asyncFun2() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("sucess");
-      resolve("Sucess");
-    }, 5000);
-  });
-}
+(async function (){
+  await getData(2);
+  await getData(3);
+  await getData(4);
+})();
 
-console.log("fetching data1");
-
-let p1 = asyncFun1();
-p1.then((res) => {
-  console.log(res);
-  console.log("fetching data2");
-  let p2 = asyncFun2();
-  p2.then((res) => {
-    console.log(res);
-  });
-});
+( ()=>{
+  console.log("hello");
+})();
